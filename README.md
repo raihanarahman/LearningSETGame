@@ -1,6 +1,6 @@
 # LearningSETGame
 
-SET is a popular online puzzle game, accessible [here] (http://www.setgame.com/set/puzzle), where users attempt to group cards based on the presence or absence of certain features. Users are provided 12 cards and asked to determine the 6 triples of cards which either all disagree or agree on the characteristics of color, shading, number, and shape. This game helps users build their critical thinking skills and become famililar with sets, which can open the door to set theory. While the game is fun to play, there is a learning curve; it took me almost a year to fully grasp all of the rules and play with confidence.
+SET is a popular online puzzle game, accessible [here](http://www.setgame.com/set/puzzle), where users attempt to group cards based on the presence or absence of certain features. Users are provided 12 cards and asked to determine the 6 triples of cards which either all disagree or agree on the characteristics of color, shading, number, and shape. This game helps users build their critical thinking skills and become famililar with sets, which can open the door to set theory. While the game is fun to play, there is a learning curve; it took me almost a year to fully grasp all of the rules and play with confidence.
 
 # Goal
 
