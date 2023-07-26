@@ -14,6 +14,6 @@ Another mode, called Learner Mode, will shrink the scale of the game so users ar
 
 # Currently
 
-I am currently working on the front-end to make the website where these programs will be hosted. I am also currently working on making the first mode of the game, where SET can simply be played. 
+I am currently working on the frontend to make the website where these programs will be hosted. I am also currently working on the backend to make the first mode of the game, where SET can simply be played. 
 
 
