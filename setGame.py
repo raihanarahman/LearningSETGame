@@ -1,7 +1,8 @@
-color = ["red", "purple", "green"]
-shape = ["squiggle", "oval", "diamond"]
-number = [1, 2, 3]
-filling = ["solid", "empty", "shaded"]
+colors = ["red", "purple", "green"]
+shapes = ["squiggle", "oval", "diamond"]
+numbers = [1, 2, 3]
+fillings = ["solid", "empty", "shaded"]
+deck = []
 
 class Card:
     def __init__(self, color, shape, number, filling):
@@ -9,21 +10,31 @@ class Card:
         self.shape = shape
         self.number = number
         self.filling = filling
+    
+    # I would like to be able to return a set of all the properties of a given card. It's more convenient for when I use check()
+    def info(self):
+        return set([self.color, self.shape,self.number, self.filling])
 
 def makeDeck():
-    deck = []
-    for color in color:
-        for shape in shape:
-            for number in number:
-                for filling in filling:
+    for color in colors:
+        for shape in shapes:
+            for number in numbers:
+                for filling in fillings:
                     card = Card(color, shape, number, filling)
                     deck.append(card)
     return deck
 
 def check(card1, card2, card3):
-    # Determine whether three cards, taken together, are a set
-    # Return True if a set, False if not a set. 
-    # Should also print to terminal why it is not a set.
+    # Determine all common qualities among all three cards.
+    allCommon = Card.info(card1).intersection(Card.info(card2), Card.info(card3))
+    # Determine all common qualities between each possible pair of cards.
+    oneTwoCommon = Card.info(card1).intersection(Card.info(card2))
+    oneThreeCommon = Card.info(card1).intersection(Card.info(card3))
+    twoThreeCommon = Card.info(card2).intersection(card3.info())
+    # If the common qualities between pairs of cards are the same as the common qualities among all three cards, a proper set has been created. Return true. 
+    # Note that this means that if 0 qualities are shared, a proper set has still been made. 
+    if allCommon == oneTwoCommon and oneTwoCommon == oneThreeCommon and oneThreeCommon == twoThreeCommon:
+        return allCommon
     return False
 
 def initial():
@@ -36,7 +47,7 @@ def initial():
     # Use a while loop to loop through the following
         # Choose 12 random cards. 
         # Use check() to determine if there are 6 sets in the group of cards
-        # If yes, then we have finished initialziing. Return the group of cards and exit the loop
+        # If yes, then we have finished initializing. Return the group of cards and exit the loop
         # If no, loop again.
     
 # Potential Issues: This can be a very inefficient way to generate groups of cards. Another method of doing so:
@@ -80,3 +91,12 @@ def game():
        if check(card1, card2, card3) == True:
            foundSETs = foundSETs + 1
     return True
+
+# Simple test case of check() method. 
+card1 = Card("red", "oval", 1, "solid")
+card2 = Card("purple", "squiggle", 2, "empty")
+card3 = Card("green", "diamond", 3, "shaded")
+print(check(card1, card2, card3))
+
+makeDeck()
+print(deck[23].info())
